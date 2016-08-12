@@ -44,6 +44,7 @@ module.exports = {
             "_store": path.join(__dirname, "src/" + "app" + "/js/store"),
             "_style": path.join(__dirname, "src/" + "app" + "/js/style"),
             "_ui-modules": path.join(__dirname, "src/" + "app" + "/js/ui-modules"),
+            "_muv-components": path.join(__dirname, "src/" + "app" + "/js/ui-modules/material-ui-vue/components"),
             "_util": path.join(__dirname, "src/" + "app" + "/js/util"),
             '_sass': path.join(__dirname, "src/" + "app" + "/sass"),
         },
@@ -80,5 +81,15 @@ module.exports = {
                 test: /\.(eot|ttf|woff|woff2)?$/,
                 loader: 'url-loader?limit=10&name=assets/fonts/[name].[ext]'
             }]
+    },
+    devServer: {
+        debug: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000,
+        },
+        stats: {
+            colors: true
+        }
     }
 };

@@ -4,6 +4,8 @@ import Resource from 'vue-resource'
 import {domain, fromNow} from '_filters'
 import AppView from '_components/App.vue'
 import {configRouter} from '_router/router.config.js'
+import {sync} from 'vuex-router-sync'
+import store from '_store/store'
 import '_sass/main.scss'
 import '../index.html'
 require('es6-promise').polyfill()
@@ -25,6 +27,7 @@ const router = new Router({
 })
 
 configRouter(router)
+sync(store, router)
 
 const App = Vue.extend(AppView)
 router.start(App, '#app')
