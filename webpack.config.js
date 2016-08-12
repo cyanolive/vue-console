@@ -2,7 +2,8 @@ var path = require('path'),
     webpack = require('webpack');
 
 var vue = require('vue-loader'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, './src/app'),
@@ -18,7 +19,17 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin("app.bundle.css")
+        new ExtractTextPlugin("app.bundle.css"),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, "src/app/assets/libs/**/*"),
+                to: path.join(__dirname, "static/assets/libs/"),
+            },
+            {
+                from: path.join(__dirname, "src/app/favicon.png"),
+                to: path.join(__dirname, "static/"),
+            }
+        ])
     ],
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -65,7 +76,7 @@ module.exports = {
             }, {
                 test: /\.scss$|\.sass$/,
                 loader: ExtractTextPlugin.extract("style", "css?sourceMap!sass?sourceMap")
-            },{
+            }, {
                 test: /\.(eot|ttf|woff|woff2)?$/,
                 loader: 'url-loader?limit=10&name=assets/fonts/[name].[ext]'
             }]

@@ -1,73 +1,29 @@
 <style lang="stylus" rel="stylesheet/scss">
 
-    .login {
-        width: 100%;
-        height: 100%;
-        background-color: #2b2f3e;
-    }
-
-    .login-section {
-        margin-top: 250px;
-        text-align: center;
-    }
-
-    .login-form {
-        width: 260px;
-        margin: 40px auto;
-        color: rgba(0, 0, 0, .87);
-        font-size: 16px;
-    }
-
-    .user-password {
-        margin-top: 16px;
-        margin-bottom: 24px;
-    }
-
-    /*.login-btn {*/
-        /*width: 100%;*/
-        /*background-color: #f44336;*/
-        /*color: #fff;*/
-    /*}*/
-
-    input::-webkit-input-placeholder {
-        color: rgba(0, 0, 0, .54);
-    }
-
-    .v-enter, .v-leave {
-        height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        border-top-width: 0;
-        border-bottom-width: 0;
-    }
-
-    .errors {
-        color: #fff;
-    }
 </style>
 
-
 <template>
-    <div class="login row">
-        <div class="login-section col-lg-offset-4 col-lg-4">
-            <img src="../../../assets/images/logo-login.png" width=173 height=35>
-            <form id="form" class="login-form" v-on:submit.prevent="login">
-                <div class="user-name">
-                    <input class="form-control" placeholder="Username" v-model="user.name">
-                </div>
-                <div class="user-password">
-                    <input class="form-control" placeholder="Password" v-model="user.password" type="password"
-                           @keyup.enter="login">
-                </div>
-                <button type="button" class="login-btn btn" @click.prevent.stop="increment">Inrement</button>
-                <button type="button" class="login-btn btn" @click.prevent.stop="decrement">Derement</button>
-            </form>
-            <ul class="errors">
-                <li v-show="!validation.name">Name cannot be empty.</li>
-                <li v-show="!validation.password">Please provide a valid password</li>
-            </ul>
-            <display-view></display-view>
+    <div class="container">
+        <div class="card large blue-grey darken-1">
+            <div class="row">
+                <form class="col s12">
+                    <input type="text" class="validate">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="tel" class="validate">
+                            <label for="icon_telephone">Telephone</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+        <a class="btn" onclick="Materialize.toast('I am a toast!', 3000, 'btn')">Toast!</a>
     </div>
 </template>
 
