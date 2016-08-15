@@ -17,7 +17,7 @@
     "url": "https://github.com/cyanolive/vue-console/issues"
   },
   "homepage": "https://github.com/cyanolive/vue-console",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
     "babel-plugin-transform-runtime": "^6.1.18",
@@ -25,6 +25,7 @@
     "babel-runtime": "^6.1.18",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.21.0",
+    "es6-promise": "^3.0.2",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "node-sass": "^3.4.2",
@@ -33,21 +34,18 @@
     "sass-loader": "github:jtangelder/sass-loader#master",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.0",
-    "vue-hot-reload-api": "^1.2.0",
-    "vue-html-loader": "^1.0.0",
-    "webpack": "^1.12.8",
-    "webpack-dev-server": "^1.12.0"
-  },
-  "dependencies": {
-    "es6-promise": "^3.0.2",
     "url-loader": "^0.5.7",
     "uuid": "^2.0.2",
-    "vue": "^1.0.21",
+    "vue": "^1.0.26",
+    "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.2.3",
-    "vue-resource": "^0.7.0",
+    "vue-resource": "^0.9.3",
     "vue-router": "^0.7.13",
     "vue-style-loader": "^1.0.0",
+    "vue-validator": "^2.1.5",
     "vuex": "^0.8.2",
-    "vuex-router-sync": "^2.1.0"
+    "vuex-router-sync": "^2.1.0",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.0"
   }
 }
